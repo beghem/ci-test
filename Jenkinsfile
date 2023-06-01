@@ -1,9 +1,12 @@
 pipeline {
-  agent { docker }
+  agent { docker {
+    image 'node:18.16.0-alpine'
+    }
+  }
   stages {
-    stage('workspace') {
+    stage('build') {
       steps {
-        sh "ls"
+        sh "node -v"
       }
     }
   }
