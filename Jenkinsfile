@@ -19,9 +19,17 @@ pipeline {
     stage('test') {
       steps {
         dir('build') {
-          sh "ctest -C ${env.BUILD_TYPE}"
+          sh "ctest --output-junit test_log.xml -C ${env.BUILD_TYPE}"
         }
       }
+    }
+  }
+  post {
+    always{
+      xunit (
+          thresholds: [ skipped(failureThreshold: '0'), failed(failureThreshold: '0') ],
+          tools: [ GoogleTest(pattern: 'build/test_log.xml') ]
+      )
     }
   }
 }
