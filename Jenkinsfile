@@ -18,8 +18,9 @@ pipeline {
     }
     stage('test') {
       steps {
-        dir('build')
-        sh "ctest -C ${env.BUILD_TYPE}"
+        dir('build') {
+          sh "ctest -C ${env.BUILD_TYPE}"
+        }
       }
     }
   }
