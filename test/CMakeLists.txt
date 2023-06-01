@@ -15,4 +15,4 @@ target_include_directories(unit_tests
         ${CMAKE_SOURCE_DIR}/include
 )
 
-add_test(test_all unit_tests)
+add_test(test_all unit_tests --gtest_output=xml)
