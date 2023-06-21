@@ -7,6 +7,11 @@
             "label": "build",
             "type": "shell",
             "command": "cmake -B build -DCMAKE_BUILD_TYPE=Relase && cmake --build build --config Relase"
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "command": "cd build/test && ctest -C Relase"
         }
     ]
 }
