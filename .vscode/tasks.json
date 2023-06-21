@@ -11,7 +11,7 @@
         {
             "label": "test",
             "type": "shell",
-            "command": "cd build/test && ctest -C Relase"
+            "command": "ctest --verbose --test-dir build/test -C Relase"
         }
     ]
 }

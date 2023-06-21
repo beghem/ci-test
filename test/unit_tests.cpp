@@ -15,7 +15,7 @@ TEST_F(ReverseTests, simple )
     Reverse rev;
     std::string res = rev.reverse(toRev);
 
-    EXPECT_EQ(res, "olleHx" );
+    EXPECT_EQ(res, "olleH" );
 
 }
 
