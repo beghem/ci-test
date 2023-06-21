@@ -18,7 +18,9 @@ pipeline {
     }
     stage('test') {
       steps {
-          sh "ctest --verbose --test-dir build/test -C ${env.BUILD_TYPE}"
+        dir('build/test') {
+          sh "ctest --verbose -C ${env.BUILD_TYPE}"
+        }
       }
     }
   }
